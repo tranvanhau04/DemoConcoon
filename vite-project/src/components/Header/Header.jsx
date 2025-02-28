@@ -1,0 +1,27 @@
+function Header() {
+    return (
+      <header className="header d-flex justify-content-between align-items-center px-4 py-2 bg-light">
+        <div className="header-left d-flex align-items-center gap-3">
+          <input type="text" className="form-control" placeholder="Tìm kiếm..." style={{width: "200px"}} />
+          <nav className="d-flex gap-3">
+            <a href="#" className="text-dark fw-bold">Sản phẩm</a>
+            <a href="#" className="text-dark fw-bold">Cocoon</a>
+            <a href="#" className="text-dark fw-bold">Bài viết</a>
+          </nav>
+        </div>
+        <div className="header-mid d-flex align-items-center gap-3">
+            <a href="#">
+                <img src="/images/logoCocoon.svg" alt="" />
+            </a>
+        </div>
+        <div className="header-right d-flex align-items-center gap-3">
+          <a href="#" className="text-dark fw-bold">Đăng nhập</a>
+          <a href="#" className="text-dark fw-bold">Liên hệ</a>
+          <a href="#" className="text-dark fw-bold">Giỏ hàng (1)</a>
+          <a href="#" className="text-dark fw-bold">EN</a>
+        </div>
+      </header>
+    );
+  }
+  export default Header;
+  
