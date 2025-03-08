@@ -1,8 +1,12 @@
 import { useState } from "react";
 import "./Header.css";
 import LoginForm from "../../pages/LogIn/LogIn";
+import { Link } from "react-router-dom";
+import SidebarCocoon from "../Sidebar/SidebarCocoon";
+
 function Header() {
     const [showLogin, setShowLogin] = useState(false);
+    const [showSidebar, setShowSidebar] = useState(false);
 
     return (
         <>
@@ -10,8 +14,8 @@ function Header() {
                 <div className="header-left d-flex align-items-center gap-3">
                     <input type="text" className="form-control btn-search" placeholder="Tìm kiếm..." style={{ width: "200px" }} />
                     <nav className="d-flex gap-3">
-                        <a href="#" className="text-dark fw-bold ">Sản phẩm</a>
-                        <a href="#" className="text-dark fw-bold">Cocoon</a>
+                        <a href="#" className="text-dark fw-bold">Sản phẩm</a>
+                        <a href="#" className="text-dark fw-bold" onClick={() => setShowSidebar(true)}>Cocoon</a>
                         <a href="#" className="text-dark fw-bold">Bài viết</a>
                     </nav>
                 </div>
@@ -28,12 +32,15 @@ function Header() {
             </header>
 
             {showLogin && <div className="overlay" onClick={() => setShowLogin(false)}></div>}
-
             {showLogin && (
                 <div className="modal-container">
                     <LoginForm setShowLogin={setShowLogin} />
                 </div>
             )}
+
+{showSidebar && <div className="overlay" onClick={() => setShowSidebar(false)}></div>}
+<SidebarCocoon show={showSidebar} onClose={() => setShowSidebar(false)} />
+
         </>
     );
 }

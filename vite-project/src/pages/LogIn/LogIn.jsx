@@ -60,7 +60,7 @@ export default function LoginForm({ setShowLogin }) {
     <div>
       <div
         className="bg-white p-4 rounded-3 shadow-lg d-flex flex-column"
-        style={{ width: "600px", height: "600px" }}
+        style={{ width: "600px", height: "700px" }}
       >
         <header className="d-flex justify-content-between align-items-center border-bottom pb-3">
           <h2 className="m-0">Đăng nhập</h2>
